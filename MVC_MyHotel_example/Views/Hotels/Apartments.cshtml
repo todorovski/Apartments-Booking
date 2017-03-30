@@ -1,0 +1,148 @@
+﻿@model IEnumerable<MVC_MyHotel_example.Models.Apartment>
+@using MVC_MyHotel_example.Models;
+
+@{
+    ViewBag.Title = "Apartments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string hotelID = ViewData["hotelID"].ToString();
+    string CustomerUsername = HttpContext.Current.User.Identity.Name;
+    Hotel hotel = (Hotel)ViewData["hotel"];
+}
+
+<header class="cover">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="cover-hotel-info">
+                    <div class="no-stars text-right pull-right">
+                        <p>Number of Stars:</p>
+                        @for(int i=0; i<@hotel.stars; i++){
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        }
+
+                    </div>
+                    
+                    <div class="left-info">
+                        <h2>@hotel.name</h2>
+                        <p><span class="address">@hotel.address</span> in <span class="city">@hotel.city</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @if(User.IsInRole("Administrator")){
+                <p>
+                @Html.ActionLink(
+                "Add apartment",                                                  // linkText
+                "Create",                                    // actionName
+                "Apartments",                                                   // controllerName
+                new
+                {                                                     // routeValues
+                    hotelID = hotelID
+                },
+                new {@class = "add-apartment"}                                                     //htmlAttributes
+            )
+            </p>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+<section id="hotel-apartments">
+    <div class="container">
+
+        <div class="row">
+            
+            <div class="big-title text-center">
+                <h1>APARTMETNTS IN THIS HOTEL</h1>
+                <div class="line"></div>
+            </div>
+           
+        </div>
+
+        
+
+        <div class="row">
+
+            @foreach (var item in Model) {
+    
+                <div class="col-md-6">
+                <div class="apartment-box">
+
+                    @if(User.IsInRole("Administrator"))
+                    {
+                    <div class="opton-btns">
+                            
+                            <a href="@Url.Action("Edit", "Apartments", new { id=item.ID })" class="edit">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="@Url.Action("Delete", "Apartments", new { id=item.ID })" class="delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+
+
+                        </div>
+                    }
+
+                    <p class="price-cont">
+                        $ <span class="price">@Html.DisplayFor(modelItem => item.rating)</span>/night
+                    </p>
+                
+                    <div class="img-cont">
+                        <img src="/Content/ApartmentsImg/@item.image" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="box-body">
+
+                        <div class="pull-right">
+                            <p class="rooms">Rooms: <span class="">@Html.DisplayFor(modelItem => item.rooms)</span>
+                            </p>
+                        </div>
+                        
+                        <div class="">
+                            <p class="floor">Floor: <span class="">@Html.DisplayFor(modelItem => item.floor)</span>
+                            </p>
+                        </div>
+                        
+                        <div class="clearfix"></div>
+                        
+                        <div class="">
+                            <p class="description">Description:</p>
+                            <p>@Html.DisplayFor(modelItem => item.description)</p>
+                        </div>
+                    </div>
+
+                    
+
+                    @if(!item.booked){
+                        <div class="bottom-link book">
+                            @Html.ActionLink("BOOK NOW", "Create", "Reservations", new { ApartmentId = item.ID, CustomerUsername = CustomerUsername }, null)
+                        </div>
+                    }
+                    else{
+                        <div class="bottom-link not-book">
+                            <a href="#">AREADY BOOKED</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+
+            }
+            
+
+        </div>
+    </div>
+</section>

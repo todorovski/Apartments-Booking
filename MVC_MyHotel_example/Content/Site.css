@@ -1,0 +1,891 @@
+﻿*{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+
+body {
+    padding-top: 80px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+h3,h4,h5,h6{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+
+footer{
+	background-color: #222;
+	padding: 50px 0;
+	padding-top: 60px;
+}
+
+footer p {
+	color: #666;
+	letter-spacing: 0.5px;
+}
+
+footer .social-media .social{
+	color: white;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+footer .social-media .social:hover, footer .social-media .social:focus{
+	opacity: 0.8;
+	text-decoration: none;
+}
+
+.navbar{
+	height: 80px;
+	background-color: #222;
+	border-bottom: none;
+}
+
+.navbar .navbar-brand {
+	font-size: 30px;
+	color: white;
+	font-family: 'Lato',sans-serif;
+	letter-spacing: 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-right: 1px solid #333;
+	margin-top: 15px;
+}
+
+.navbar .navbar-brand .m-symbol{
+	color: #e74c3c;
+	font-weight: 700;
+}
+
+.navbar .nav li{
+	height: 80px;
+}
+
+.navbar .nav li a{
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.navbar .nav li a:hover, .navbar .nav li a:focus{
+	background-color: #333;
+
+	border-bottom: 8px solid #e74c3c;
+
+	transition-duration:.2s;
+  -webkit-transition-duration:.2s;
+  -moz-transition-duration:.2s;
+  -o-transition-duration:.2s;
+}
+
+.home-header{
+	height: 100vh;
+	background-image: url('img/header.jpeg');
+	background-position: center;
+	font-family: 'Lato', sans-serif;
+	position: relative;
+	background-attachment: fixed;
+}
+
+.home-header .overlay{
+	background-color: rgba(0,0,0,0.7);
+	height: inherit;
+	color: white;
+
+}
+
+.home-header .slogan {
+	margin-top: 250px;
+}
+
+.home-header .slogan .line{
+	width: 70px;
+	height: 2px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	background-color: #e74c3c;
+	margin: 0 auto;
+}
+
+.home-header .slogan h1{
+	font-family: 'Cabin', sans-serif;
+	font-weight: 700;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+}
+
+.home-header .slogan h4{
+	margin-top: 10px;
+	margin-bottom: 30px;
+	letter-spacing: 1px;
+	font-weight: 300;
+	opacity: 0.6;
+}
+
+.home-header .slogan .cta a{
+	border: 1px solid white;
+	color: white;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 400;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 17px;
+	letter-spacing: 1px;
+	margin-top: 30px;
+	display: block;
+	width: 130px;
+	margin: 0 auto;
+	 transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.home-header .slogan .cta a:hover, .home-header .slogan .cta a:focus{
+	text-decoration: none;
+	background-color: white;
+	color: #e74c3c;
+
+	 transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.bottom{
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	right: 0;
+}
+
+.bottom a{
+	color: white;
+	text-decoration: none;
+	font-size: 27px;
+}
+
+
+.hotel-box{
+	width: 100%;
+	height: 330px;
+	border: 1px solid #ededed;
+	border-radius: 2px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.hotel-box .img-cont{
+	height: 150px;
+}
+
+.hotel-box .img-cont img{
+	min-height: 100%;
+}
+
+.hotel-box .box-body{
+	padding: 20px;
+}
+
+.hotel-box .bottom-link a{
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: white;
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	font-family: 'Cabin',sans-serif;
+	letter-spacing: 1px;
+	background-color: #222;
+	display: block;
+	position: absolute;
+	bottom: 0;
+
+	transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.hotel-box .bottom-link a:hover, .hotel-box .bottom-link a:focus{
+	text-decoration: none;
+	background-color: #555;
+	transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.hotel-box .name {
+	color: #222;
+	font-weight: 400;
+	font-weight: 'Lato',sans-serif;
+}
+
+.hotel-box .address, .hotel-box .city{
+	color: #2ecc71;
+}
+
+.hotel-box .no-stars{
+	color: #f1c40f;
+}
+
+.hotel-box .price-cont{
+	background-color: #2ecc71;
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+	font-family: 'Cabin', sans-serif;
+	padding: 5px 7px;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border-radius: 3px;
+}
+
+
+.hotel-box .price-cont span{
+	font-weight: 600;
+	font-size: 16px;
+	font-family: 'Cabin', sans-serif;
+}
+
+.hotel-box .opton-btns {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+
+.hotel-box .opton-btns a{
+	height: 40px;
+	width: 40px;
+	display: block;
+	border-radius: 4px;
+	margin-bottom: 15px;
+	font-size: 22px;
+	color: white;
+	text-align:center;
+	padding-top: 4px;
+
+	transition-duration:.2s;
+  -webkit-transition-duration:.2s;
+  -moz-transition-duration:.2s;
+  -o-transition-duration:.2s;
+}
+
+.hotel-box .opton-btns a:hover, .hotel-box .opton-btns a:focus{
+	opacity: 0.8;
+	text-decoration:none;
+
+	transition-duration:.2s;
+  -webkit-transition-duration:.2s;
+  -moz-transition-duration:.2s;
+  -o-transition-duration:.2s;
+}
+
+.hotel-box .opton-btns .edit{
+	background-color: #3498db;
+}
+
+.hotel-box .opton-btns .delete{
+	background-color: #e74c3c;
+}
+
+#featured{
+	padding: 70px 0;
+	padding-bottom: 50px;
+}
+
+#featured .view-all a{
+	display: block;
+	width: 180px;
+	font-family: 'Cabin',sans-serif;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin-top: 80px;
+	color: #222;
+	border: 2px solid #222;
+	text-align: center;
+
+	transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+#featured .view-all a:hover, #featured .view-all a:focus{
+	text-decoration: none;
+	background-color: #222;
+	color: white;
+
+	transition-duration:.2s;
+  -webkit-transition-duration:.2s;
+  -moz-transition-duration:.2s;
+  -o-transition-duration:.2s;
+}
+
+
+
+.big-title{
+	margin-bottom: 60px;
+}
+
+.big-title h1{
+	letter-spacing: 1px;
+	font-weight: 400;
+	font-family: 'Lato',sans-serif;
+}
+
+.big-title .line {
+	width: 70px;
+	height: 2px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	background-color: #e74c3c;
+	margin: 0 auto;
+}
+
+.about{
+	background-color: #f7f1f1;
+	padding: 70px 0;
+}
+
+
+.about .about-text{
+	padding: 80px;
+	background-color: white;
+}
+
+.about .about-text p{
+	color: #777;
+	line-height: 25px;
+}
+
+.about .big-title {
+	margin-bottom: 30px;
+}
+
+.about .big-title h1 {
+	font-size: 23px;
+}
+
+.about .big-title .line{
+	margin: 0;
+	margin-left: 2px;
+}
+
+.about .right-img{
+	position: relative;
+}
+
+.about .right-img img{
+	position: absolute;
+	top: -180px;
+}
+
+/* .about .right-img .img-desc{
+	font-style: italic;
+	color: white;
+	background-color: #222;
+	top:400px;
+	z-index: 3;
+	position: absolute;
+} */
+
+
+
+/********************************************************/
+/*MY RESERVATIONS*/
+/********************************************************/
+
+.green{
+	color: #2ecc71;
+}
+
+#my-reservations{
+	padding: 60px 0;
+}
+
+
+#my-reservations .reservation-box{
+	
+	width: 100%;
+	height: 250px;
+	border: 1px solid #ededed;
+	background-color: white;
+	border-radius: 3px;
+	margin-bottom: 30px;
+
+}
+
+#my-reservations .reservation-box .img-cont{
+	height: inherit;
+	overflow: hidden;
+	padding: 5px;
+}
+
+#my-reservations .reservation-box .img-cont img{
+	height: 100%;
+	margin: 0 auto;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+#my-reservations .reservation-box .main-details{
+	padding-top: 15px;
+	padding-left: 25px;
+}
+
+#my-reservations .reservation-box .main-details .item{
+	margin-bottom: 15px;
+}
+
+#my-reservations .reservation-box .main-details .item h5{
+	margin-bottom: 5px;
+	font-weight: 600;
+	color: #27ae60;
+}
+
+#my-reservations .reservation-box .main-details .item p{
+	color: #888;
+}
+
+#my-reservations .reservation-box .action-btns{
+	padding-top: 35px;
+	border-left: 1px solid #ededed;
+	height: inherit;
+	background-color: #ededed;
+}
+
+#my-reservations .reservation-box .action-btns a{
+	margin-bottom: 20px;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+}
+
+#my-reservations .big-title{
+
+}
+
+#my-reservations .big-title .line {
+	
+}
+
+
+/********************************************************/
+/*BROWSE HOTELS*/
+/********************************************************/
+
+.cover{
+	height: 300px;
+	background-color: #ededed;
+	background-image: url('img/cover2.jpg');
+	background-position: center;
+}
+
+.cover .overlay{
+	background-color: rgba(0,0,0,0.6);
+	height: inherit;
+}
+
+.cover .big-title{
+	margin-top: 120px;
+}
+
+.cover .big-title h1{
+	color: white;
+}
+
+.cover .big-title .line{
+	margin-bottom: 20px;
+}
+
+.cover .create-new {
+	border: 1px solid white;
+	color: white;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 400;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 17px;
+	letter-spacing: 1px;
+	margin-top: 30px;
+	display: block;
+	width: 210px;
+	margin: 0 auto;
+	 transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.cover .create-new:hover, .cover .create-new:focus{
+	text-decoration: none;
+	background-color: white;
+	color: #e74c3c;
+
+	 transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+
+#all-hotels{
+	padding: 50px 0;
+}
+
+
+/*******HOTEL APARTMENTS*******/
+
+#hotel-apartments{
+	padding: 20px 0;
+	padding-bottom: 60px;
+}
+
+#hotel-apartments .reservation-box{
+	
+	width: 100%;
+	height: 250px;
+	border: 1px solid #ededed;
+	background-color: white;
+	border-radius: 3px;
+	margin-bottom: 30px;
+
+}
+
+#hotel-apartments .reservation-box .img-cont{
+	height: inherit;
+	overflow: hidden;
+	padding: 5px;
+}
+
+#hotel-apartments .reservation-box .img-cont img{
+	height: 100%;
+	margin: 0 auto;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+#hotel-apartments .reservation-box .main-details{
+	padding-top: 15px;
+	padding-left: 25px;
+}
+
+#hotel-apartments .reservation-box .main-details .item{
+	margin-bottom: 15px;
+}
+
+#hotel-apartments .reservation-box .main-details .item h5{
+	margin-bottom: 5px;
+	font-weight: 600;
+	color: #27ae60;
+}
+
+#hotel-apartments .reservation-box .main-details .item p{
+	color: #888;
+}
+
+#hotel-apartments .reservation-box .action-btns{
+	padding-top: 35px;
+	border-left: 1px solid #ededed;
+	height: inherit;
+	background-color: #ededed;
+}
+
+#hotel-apartments .reservation-box .action-btns a{
+	margin-bottom: 20px;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+}
+
+
+.cover .left-info{
+	color: white;
+}
+
+
+.cover .left-info h2{
+	margin:0;
+	padding: 0;
+	margin-bottom: 15px;
+}
+
+.cover .left-info .address, .cover .left-info .city{
+	color: #2ecc71;
+}
+
+.cover .no-stars p {
+	color: white;
+}
+
+.cover .no-stars i{
+	color: #f1c40f;
+}
+
+.cover-hotel-info{
+	margin-top: 170px;
+}
+
+.apartment-box{
+	width: 100%;
+	height: 400px;
+	border: 1px solid #ededed;
+	border-radius: 2px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.apartment-box .img-cont{
+	height: 200px;
+	overflow: hidden;
+}
+
+.apartment-box .img-cont img{
+	min-width: 100%;
+}
+
+.apartment-box .box-body{
+	padding: 20px;
+}
+
+.apartment-box .bottom-link a{
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: white;
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	font-family: 'Cabin',sans-serif;
+	letter-spacing: 1px;
+	background-color: #222;
+	display: block;
+	position: absolute;
+	bottom: 0;
+
+	transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.apartment-box .bottom-link a:hover, .apartment-box .bottom-link a:focus{
+	text-decoration: none;
+	background-color: #555;
+	transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.apartment-box .bottom-link.book a{
+	background-color: #2ecc71;
+}
+
+.apartment-box .bottom-link.not-book a{
+	background-color: #e74c3c;
+}
+
+.apartment-box .name {
+	color: #222;
+	font-weight: 400;
+	font-weight: 'Lato',sans-serif;
+}
+
+.apartment-box .floor, .apartment-box .rooms{
+	color: #2ecc71;
+}
+
+.apartment-box .description{
+	color: #2ecc71;
+	margin-top: 10px;
+}
+
+.apartment-box .price-cont{
+	background-color: #2ecc71;
+	color: white;
+	font-weight: 600;
+	font-size: 16px;
+	font-family: 'Cabin', sans-serif;
+	padding: 5px 7px;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border-radius: 3px;
+}
+
+
+.apartment-box .price-cont span{
+	font-weight: 600;
+	font-size: 16px;
+	font-family: 'Cabin', sans-serif;
+}
+
+.apartment-box .opton-btns {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+
+.apartment-box .opton-btns a{
+	height: 40px;
+	width: 40px;
+	display: block;
+	border-radius: 4px;
+	margin-bottom: 15px;
+	font-size: 22px;
+	color: white;
+	text-align:center;
+	padding-top: 4px;
+
+	transition-duration:.2s;
+  -webkit-transition-duration:.2s;
+  -moz-transition-duration:.2s;
+  -o-transition-duration:.2s;
+}
+
+.apartment-box .opton-btns a:hover, .apartment-box .opton-btns a:focus{
+	opacity: 0.8;
+	text-decoration:none;
+
+	transition-duration:.2s;
+  -webkit-transition-duration:.2s;
+  -moz-transition-duration:.2s;
+  -o-transition-duration:.2s;
+}
+
+.apartment-box .opton-btns .edit{
+	background-color: #3498db;
+}
+
+.apartment-box .opton-btns .delete{
+	background-color: #e74c3c;
+}
+
+.add-apartment {
+	border: 1px solid #e74c3c;
+	color: #e74c3c;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 400;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 17px;
+	letter-spacing: 1px;
+	margin-top: 30px;
+	display: block;
+	text-transform: uppercase;
+	width: 180px;
+	text-align:center;
+	 transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+.add-apartment:hover, .add-apartment:focus{
+	text-decoration: none;
+	background-color: #e74c3c;
+	color: white;
+
+	 transition-duration:.3s;
+  -webkit-transition-duration:.3s;
+  -moz-transition-duration:.3s;
+  -o-transition-duration:.3s;
+}
+
+
+
+/***********FORMS*************/
+
+.form-group input[type=text],.form-group input[type=password],.form-group input[type=datetime],.form-group input[type=number]{
+	height: 40px;
+	width: 100%!important;
+	background-color: #ededed;
+	border: none;
+	border-radius: 1px;
+	box-shadow: none;
+}
+
+
+.form-group input[type=submit]{
+	background-color: #2ecc71;
+	color: white;
+	border: none;
+	border-radius: 0px;
+	box-shadow: none;
+	width: 100%;
+	height: 40px;
+	text-transform: uppercase;
+}
+
+.form-group input[type=submit]:hover, .form-group input[type=submit]:focus{
+	opacity: 0.9;
+}
+
+#register-sec{
+	padding: 60px 0;
+}
+
+#register-sec h2{
+	color: #e74c3c;
+}
+
+#register-sec .img-cont{
+	height: 400px;
+	overflow: hidden;
+}
+
+#login-sec{
+	padding: 60px 0;
+}
+
+#login-sec h2{
+	color: #e74c3c;
+}
+
+#login-sec .img-cont{
+	height: 400px;
+	overflow: hidden;
+}
+
+
+
+
+

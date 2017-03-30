@@ -1,0 +1,98 @@
+﻿@model IEnumerable<MVC_MyHotel_example.Models.Hotel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<header class="cover">
+    <div class="overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="big-title text-center">
+                    <h1>BROWSE HOTELS</h1>
+                    <div class="line"></div>
+
+                    @if(User.IsInRole("Administrator"))
+                    {
+                        <a href="@Url.Action("Create")" class="create-new">
+                            <i class="fa fa-plus" aria-hidden="true"></i> ADD NEW HOTEL
+                        </a>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="all-hotels">
+    <div class="container">
+        
+
+        <div class="row">
+            
+            @foreach (var item in Model) {
+
+                <div class="col-md-3">
+                    <div class="hotel-box">
+
+                        @if(User.IsInRole("Administrator"))
+                        {
+                        <div class="opton-btns">
+                            
+                            <a href="@Url.Action("Edit", new { id=item.ID })" class="edit">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="@Url.Action("Delete", new { id=item.ID })" class="delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+
+
+                        </div>
+                        }
+                        <p class="price-cont">
+                            $ <span class="price">35</span>/night
+                        </p>
+                    
+                        <div class="img-cont">
+                            <img src="~/Content/HotelsImg/@item.image" class="img-responsive" alt="">
+                        </div>
+
+                        <div class="box-body">
+                            <h4 class="name">@Html.DisplayFor(modelItem => item.name)</h4>
+                            <div class="address-line">
+                                <p class=""><span class="address">@Html.DisplayFor(modelItem => item.address)</span> in <span class="city">@Html.DisplayFor(modelItem => item.city)</span>
+                                </p>
+                            </div>
+
+                            <div class="">
+                                <p class="pull-left">Stars:</p>
+                                <div class="no-stars pull-right" number="@Html.DisplayFor(modelItem => item.stars)">
+                                    
+
+                                    @for(int i=1; i<=item.stars; i++){
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    }
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-link">
+                            @Html.ActionLink("VIEW APARTMENTS", "Apartments", new { id = item.ID })
+                        </div>
+
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>

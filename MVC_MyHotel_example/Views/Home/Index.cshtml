@@ -1,0 +1,164 @@
+﻿@model IEnumerable<MVC_MyHotel_example.Models.Hotel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<header class="home-header">
+    
+    <div class="overlay">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="slogan col-md-10 col-sm-12 col-md-offset-1 text-center">
+
+                    <h1>STAY IN THE BEST HOTELS IN MACEDONIA</h1>
+                    <div class="line"></div>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                    
+                    <div class="cta">
+                        @Html.ActionLink("BROWSE", "Index", "Hotels")
+                    </div>
+
+                </div>
+                
+                <div class="bottom text-center">
+                    <a href="#featured">
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+<section id="featured">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="big-title text-center">
+                    <h1>FEATURED HOTELS</h1>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-3">
+                    <div class="hotel-box">
+
+                        @if(User.IsInRole("Administrator"))
+                        { 
+                        <div class="opton-btns">
+
+                            <a href="@Url.Action("Edit", "Hotels", new { id=item.ID })" class="edit">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="@Url.Action("Delete", "Hotels", new { id=item.ID })" class="delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+                        }
+
+                        <p class="price-cont">
+                            $ <span class="price">45</span>/night
+                        </p>
+
+                        <div class="img-cont">
+                            <img src="~/Content/HotelsImg/@item.image" class="img-responsive" alt="">
+                        </div>
+
+                        <div class="box-body">
+                            <h4 class="name">@item.name</h4>
+                            <div class="address-line">
+                                <p class="">
+                                    <span class="address">@item.address</span> in <span class="city">@item.city</span>
+                                </p>
+                            </div>
+
+                            <div class="">
+                                <p class="pull-left">Stars:</p>
+                                <div class="no-stars pull-right" number="@item.stars">
+
+
+                                    @for (int i = 1; i <= item.stars; i++)
+                                    {
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    }
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-link">
+                            @Html.ActionLink("VIEW APARTMENTS", "Apartments", "Hotels", new { id = item.ID }, null)
+                        </div>
+
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+        <div class="row">
+            
+            <div class="col-md-12 view-all">
+                @Html.ActionLink("VIEW ALL", "Index", "Hotels")
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-5">
+                
+                <div class="about-text">
+                    
+                    <div class="big-title">
+                        <h1>ABOUT US</h1>
+                        <div class="line"></div>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie pellentesque turpis vel lacinia. Morbi et elementum elit, id pharetra massa. </p>
+
+                    
+
+                    <p>Donec vehicula metus sed risus cursus, sed tempor justo dignissim. Nunc sagittis, est at ornare varius, nisl est laoreet ipsum, id mattis enim ex eget lectus. Mauris vel purus sagittis.</p>
+
+                    
+
+                    <p>Sed nec ligula eget eros condimentum bibendum sed eu est. Sed sed ultricies dolor. </p>
+
+                </div>
+
+            </div>
+
+            <div class="right-img col-md-6 col-md-offset-1 col-sm-offset-0">
+                <img src="~/Content/img/right.jpg" alt="" class="img-responsive">
+                <!-- <div class="img-desc">
+                    <p>"Marriot Hotel" - Skopje, 2017</p>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+
+</section>

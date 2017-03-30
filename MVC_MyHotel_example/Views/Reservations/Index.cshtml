@@ -1,0 +1,85 @@
+﻿@model IEnumerable<MVC_MyHotel_example.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<section id="my-reservations">
+    <div class="container">
+
+        <div class="row">
+            
+            <div class="big-title text-center">
+                <h1>ALL RESERVATIONS</h1>
+                <div class="line"></div>
+            </div>
+           
+        </div>
+
+        <div class="row">
+
+            @foreach (var item in Model) {
+    
+                <div class="reservation-box">
+                    
+                    <div class="col-sm-4 img-cont">
+                        
+                        <img src="~/Content/img/reserved.jpg" alt="" class="">
+                        
+                    </div>
+
+                    <div class="col-sm-3 main-details">
+                        <div class="item">
+                            <h5>Customer Username:</h5>
+                            <p>@Html.DisplayFor(modelItem => item.CustomerUsername)</p>
+                        </div>
+
+                        <div class="item">
+                            <h5>Customer Name:</h5>
+                            <p>@Html.DisplayFor(modelItem => item.CustomerName)</p>
+                        </div>
+
+                        <div class="item">
+                            <h5>Customer Surname:</h5>
+                            <p>@Html.DisplayFor(modelItem => item.CustomerSurname)</p>
+                        </div>
+
+                        <div class="item">
+                            <h5>Description:</h5>
+                            <p>@Html.DisplayFor(modelItem => item.Apartment.description)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3 main-details">
+                        <div class="item">
+                            <h5>From:</h5>
+                            <p>@Html.DisplayFor(modelItem => item.From)</p>
+                        </div>
+
+                        <div class="item">
+                            <h5>To:</h5>
+                            <p>@Html.DisplayFor(modelItem => item.To)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 action-btns">
+                        @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new {@class = "btn btn-primary"})
+                        <br>
+                        
+                        @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new {@class = "btn btn-danger"})
+                    </div>
+                    
+                </div>
+
+                <div class="clearfix"></div>
+
+            }
+            
+
+        </div>
+    </div>
+</section>

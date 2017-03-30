@@ -1,0 +1,68 @@
+﻿@model MVC_MyHotel_example.Models.Apartment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Apartment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.floor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.floor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotelID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotelID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @*@Html.ActionLink("Back to List", "Index")*@
+    @Html.ActionLink("Back", null, null, null, new { href = Request.UrlReferrer })
+</p>
